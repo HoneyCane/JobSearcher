@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Job Searcher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel='manifest' href='manifest.json'>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138510020-2"></script>
   <script>
@@ -14,5 +19,15 @@
 <body>
   <h1>Hello World</h1>
   <p>I'm hosted with GitHub Pages.</p>
+
+
+  <script>
+    // register the service worker for offline use
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function() {
+        console.log("Service Worker Registered");
+      });
+    }
+  </script>
 </body>
 </html>
