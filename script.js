@@ -10,7 +10,7 @@ var navItems = [
 ];
 
 var jobTitle;
-var location;
+var jobLocat;
 
 $(document).ready(function() {
   // initialize all components with auto-init attributes
@@ -37,10 +37,10 @@ $(document).ready(function() {
   // close the drawer and load the selected screen
   $("body").on('click', "#content .mdc-button", function (event){
     jobTitle = $('#job-text-field').get(0).value.toString();
-    location = $('#loc-text-field').get(0).value.toString();
+    jobLocat = $('#loc-text-field').get(0).value.toString();
     var url = "https://us.jooble.org/api/";
     var key = "76f25411-d4bd-4aba-bcb1-687fad2723f8";
-    var params = "{ keywords: '" + jobTitle + "', location: '" + location + "'}";
+    var params = "{ keywords: '" + jobTitle + "', location: '" + jobLocat + "'}";
 
     //create xmlHttpRequest object
     var http = new XMLHttpRequest();
@@ -53,8 +53,9 @@ $(document).ready(function() {
     //Callback when the state changes
     http.onreadystatechange = function() {
     	if(http.readyState == 4 && http.status == 200) {
-  		    var myArr = JSON.parse(http.responseText);
-          displayJobs(myArr);
+		    var myArr = JSON.parse(http.responseText);
+        console.log(myArr);
+        displayJobs(myArr);
     	}
     }
     //Send request to the server
