@@ -2,6 +2,10 @@ body {
   margin: 0px;
 }
 
+.template {
+  display: hidden;
+}
+
 #contentArea {
   margin-left: 24px;
 }
