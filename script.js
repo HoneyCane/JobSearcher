@@ -94,20 +94,16 @@ function displayJobs(arr) {
 
     $("body").on('click', "#content .mdc-icon-button", function (event){
       var me = $(this);
-      console.log(me);
-      console.log(me.parent());
-      console.log(me.parent().parent());
-      console.log(me.parent().parent().parent());
-      console.log(me.parent().parent().parent().find('.demo-card__title'));
-      console.log(me.parent().parent().parent().find('.demo-card__title').text());
-      console.log($(this).parent('.mdc-card').find('.demo-card__title').text());
+      var title = me.parent().parent().parent().find('.demo-card__title').text();
+      var locat = me.parent().parent().parent().find('.demo-card__subtitle').text();
+      var salar = me.parent().parent().parent().find('.demo-card__secondary').text();
       db.jobs.put({
-        position: "",
-        company: ""
+        position: title,
+        company: locat,
+        salary: salar
       });
     });
   });
-
 
 }
 
