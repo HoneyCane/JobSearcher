@@ -1,11 +1,12 @@
 var navItems = [
-  {"label": "About", "screen": "about", "icon": "info"},
   "divider",
   {"label": "Map", "screen": "map", "icon": "map"},
   "divider",
   {"label": "Chart", "screen": "chart", "icon": "pie_chart"},
   "divider",
-  {"label": "Saved for later", "screen": "saved-for-later", "icon": "save"}
+  {"label": "Saved for later", "screen": "saved-for-later", "icon": "save"},
+  "divider",
+  {"label": "About", "screen": "about", "icon": "info"}
 ];
 
 $(document).ready(function() {
