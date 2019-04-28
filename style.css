@@ -2,6 +2,10 @@ body {
   margin: 0px;
 }
 
+#text_content {
+  margin-left: 20px;
+}
+
 footer {
   position: fixed;
   left: 0;

@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   loadDrawerNavigationElements(navItems);
 
-  loadScreen("home");
+  loadScreen("search");
 
   // a constant that references MDCDrawer object
   const drawer = $("aside")[0].MDCDrawer;
