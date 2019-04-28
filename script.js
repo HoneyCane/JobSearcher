@@ -71,7 +71,7 @@ $(document).ready(function() {
  */
 function displayJobs(arr) {
   $("#content").load("./pages/list.html", function () {
-    console.log("------ Screen load: " + screenName);
+    console.log("------ Screen load: list");
 
     $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
 
