@@ -65,7 +65,7 @@ $(document).ready(function() {
 /**
  * displayJobs
  * @function
- * @param {JSON} jobs - JSON of jobs for the cards
+ * @param {array} jobs - JSON of jobs for the cards
  */
 function displayJobs(jobs) {
   $.each(jobs, function(index, value) {
