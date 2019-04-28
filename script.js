@@ -35,44 +35,44 @@ $(document).ready(function() {
   });
 
   // close the drawer and load the selected screen
-  // $("body").on('click', "#content .mdc-button", function (event){
-  //   jobTitle = $('#job-text-field').get(0).value.toString();
-  //   location = $('#loc-text-field').get(0).value.toString();
-  //   var url = "https://us.jooble.org/api/";
-  //   var key = "76f25411-d4bd-4aba-bcb1-687fad2723f8";
-  //   var params = "{ keywords: '" + jobTitle + "', location: '" + location + "'}";
-  //
-  //   //create xmlHttpRequest object
-  //   var http = new XMLHttpRequest();
-  //   //open connection. true - asynchronous, false - synchronous
-  //   http.open("POST", url + key, true);
-  //
-  //   //Send the proper header information
-  //   http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  //
-  //   //Callback when the state changes
-  //   http.onreadystatechange = function() {
-  //   	if(http.readyState == 4 && http.status == 200) {
-  // 		    var myArr = JSON.parse(http.responseText);
-  //         displayJobs(myArr);
-  //   	}
-  //   }
-  //   //Send request to the server
-  //   http.send(params);
-  // });
+  $("body").on('click', "#content .mdc-button", function (event){
+    jobTitle = $('#job-text-field').get(0).value.toString();
+    location = $('#loc-text-field').get(0).value.toString();
+    var url = "https://us.jooble.org/api/";
+    var key = "76f25411-d4bd-4aba-bcb1-687fad2723f8";
+    var params = "{ keywords: '" + jobTitle + "', location: '" + location + "'}";
+
+    //create xmlHttpRequest object
+    var http = new XMLHttpRequest();
+    //open connection. true - asynchronous, false - synchronous
+    http.open("POST", url + key, true);
+
+    //Send the proper header information
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    //Callback when the state changes
+    http.onreadystatechange = function() {
+    	if(http.readyState == 4 && http.status == 200) {
+  		    var myArr = JSON.parse(http.responseText);
+          displayJobs(myArr);
+    	}
+    }
+    //Send request to the server
+    http.send(params);
+  });
 
 });
 
-// /**
-//  * displayJobs
-//  * @function
-//  * @param {array} jobs - JSON of jobs for the cards
-//  */
-// function displayJobs(jobs) {
-//   $.each(jobs, function(index, value) {
-//     console.log(index, value);
-//   });
-// }
+/**
+ * displayJobs
+ * @function
+ * @param {array} jobs - JSON of jobs for the cards
+ */
+function displayJobs(jobs) {
+  $.each(jobs, function(index, value) {
+    console.log(index, value);
+  });
+}
 
 
 /**
