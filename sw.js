@@ -1,6 +1,6 @@
-version = '1.1';
+var version = '1.1';
 
-let cacheName = 'JobSearcher' + version;
+var cacheName = 'JobSearcher' + version;
 
 var appFiles = [
  "./index.html",
@@ -9,20 +9,14 @@ var appFiles = [
  "./favicon.png"
 ];
 
-self.addEventListener('install', e => {
-  let timeStamp = Date.now();
+self.addEventListener('install', function(e) {
+  console.log('[Service Worker] Install');
   e.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache.addAll(appFiles)
-      .then(() => self.skipWaiting());
+    caches.open(cacheName).then(function(cache) {
+          console.log('[Service Worker] Caching all: app content');
+      return cache.addAll(appFiles);
     })
-  )
-});
-
-// https://stackoverflow.com/questions/41009167/what-is-the-use-of-self-clients-claim
-
-self.addEventListener('activate',  event => {
-  event.waitUntil(self.clients.claim());
+  );
 });
 
 self.addEventListener('fetch', event => {
