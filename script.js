@@ -97,8 +97,9 @@ function displayJobs(arr) {
       console.log(me);
       console.log(me.parent());
       console.log(me.parent().parent());
-      console.log(me.parent().parent().find('.demo-card__title'));
-      console.log(me.parent().parent().find('.demo-card__title').text());
+      console.log(me.parent().parent().parent());
+      console.log(me.parent().parent().parent().find('.demo-card__title'));
+      console.log(me.parent().parent().parent().find('.demo-card__title').text());
       db.jobs.put({
         position: "",
         company: ""
