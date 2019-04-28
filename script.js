@@ -1,9 +1,7 @@
 var navItems = [
   "divider",
   {"label": "List", "screen": "list", "icon": "list"},
-  "divider",
   {"label": "Chart", "screen": "chart", "icon": "pie_chart"},
-  "divider",
   {"label": "Saved for later", "screen": "saved-for-later", "icon": "save"},
   "divider",
   {"label": "About", "screen": "about", "icon": "info"}
@@ -73,7 +71,7 @@ $(document).ready(function() {
  */
 function displayJobs(arr) {
   loadScreen('list');
-  $("#content .mdc-typography--headline3").html(arr.totalCount + " Total Results");
+  $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
 
   $.each(arr.jobs, function(index, value) {
 

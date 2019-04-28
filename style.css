@@ -3,7 +3,7 @@ body {
 }
 
 .template {
-  display: hidden;
+  display: none;
 }
 
 #contentArea {
