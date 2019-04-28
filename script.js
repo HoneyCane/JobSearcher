@@ -9,6 +9,8 @@ var navItems = [
   {"label": "About", "screen": "about", "icon": "info"}
 ];
 
+var jobTitle = '', location = '';
+
 $(document).ready(function() {
   // initialize all components with auto-init attributes
   window.mdc.autoInit();
@@ -33,8 +35,8 @@ $(document).ready(function() {
 
   // close the drawer and load the selected screen
   $("body").on('click', "#content .mdc-button", function (event){
-    var jobTitle = $('#job-text-field').get(0).value.toString();
-    var location = $('#loc-text-field').get(0).value.toString();
+    jobTitle = $('#job-text-field').get(0).value.toString();
+    location = $('#loc-text-field').get(0).value.toString();
     var url = "https://us.jooble.org/api/";
     var key = "76f25411-d4bd-4aba-bcb1-687fad2723f8";
     var params = "{ keywords: '" + jobTitle + "', location: '" + location + "'}";
@@ -50,16 +52,27 @@ $(document).ready(function() {
     //Callback when the state changes
     http.onreadystatechange = function() {
     	if(http.readyState == 4 && http.status == 200) {
-    		console.log(http.responseText);
+  		    var myArr = JSON.parse(http.responseText);
+          displayJobs(myArr);
     	}
     }
     //Send request to the server
     http.send(params);
-
-    // loadScreen('map');
   });
 
 });
+
+/**
+ * displayJobs
+ * @function
+ * @param {JSON} jobs - JSON of jobs for the cards
+ */
+function displayJobs(jobs) {
+  $.each(jobs, function(index, value) {
+    console.log(index, value);
+  });
+}
+
 
 /**
  * load nav
