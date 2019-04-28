@@ -55,7 +55,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/material-components-web@0.40.0/dist/material-components-web.min.js"></script>
-	<script src="script.js"></script>
+  <script src="https://unpkg.com/dexie@2.0.4/dist/dexie.js"></script>
+  <script src="script.js"></script>
 
   <script>
     // register the service worker for offline use
@@ -64,6 +65,12 @@
         console.log("Service Worker Registered");
       });
     }
+
+    // Define the database
+    var db = new Dexie("job_database");
+    db.version(1).stores({
+      jobs: '++id, position, company'
+    });
   </script>
 
 </body>
