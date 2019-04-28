@@ -1,7 +1,7 @@
 {
   "name": "Job Searcher",
-  "short_name": "JS",
-  "icons": [ {
+  "short_name": "JobS",
+  "icons": [{
         "src": "./favicon.png",
         "type": "image/png",
         "sizes": "256x256"

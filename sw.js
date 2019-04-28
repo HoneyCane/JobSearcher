@@ -1,4 +1,4 @@
-version = '1.0';
+version = '1.1';
 
 let cacheName = 'JobSearcher' + version;
 
@@ -20,10 +20,10 @@ self.addEventListener('install', e => {
 });
 
 // https://stackoverflow.com/questions/41009167/what-is-the-use-of-self-clients-claim
-
-self.addEventListener('activate',  event => {
-  event.waitUntil(self.clients.claim());
-});
+// 
+// self.addEventListener('activate',  event => {
+//   event.waitUntil(self.clients.claim());
+// });
 
 self.addEventListener('fetch', event => {
   event.respondWith(
