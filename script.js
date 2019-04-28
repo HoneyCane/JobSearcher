@@ -93,7 +93,7 @@ function displayJobs(arr) {
     });
 
     $("body").on('click', "#content .mdc-icon-button", function (event){
-      var me = $('this');
+      var me = $(this);
       console.log(me);
       console.log(me.parent());
       console.log(me.parent().parent());
