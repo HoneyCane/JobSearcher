@@ -53,10 +53,8 @@ $(document).ready(function() {
     //Callback when the state changes
     http.onreadystatechange = function() {
     	if(http.readyState == 4 && http.status == 200) {
-		    // var myArr = JSON.parse(http.responseText);
-        // console.log(myArr);
         console.log(http.responseText);
-        // displayJobs(myArr);
+        displayJobs(myArr);
     	}
     }
     //Send request to the server
