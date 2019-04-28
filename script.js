@@ -9,8 +9,6 @@ var navItems = [
   {"label": "About", "screen": "about", "icon": "info"}
 ];
 
-var joobleEndpoint = "https://us.jooble.org/api/76f25411-d4bd-4aba-bcb1-687fad2723f8";
-
 $(document).ready(function() {
   // initialize all components with auto-init attributes
   window.mdc.autoInit();
@@ -37,12 +35,27 @@ $(document).ready(function() {
   $("body").on('click', "#content .mdc-button", function (event){
     var jobTitle = $('#job-text-field').get(0).value.toString();
     var location = $('#loc-text-field').get(0).value.toString();
-    $.post(joobleEndpoint,
-        { "keywords": jobTitle,
-          "location": location
-        }, function(result) {
-      console.log(result);
-    });
+    var url = "https://us.jooble.org/api/";
+    var key = "76f25411-d4bd-4aba-bcb1-687fad2723f8";
+    var params = "{ keywords: " + jobTitle + ", location: " + location + "}";
+
+    //create xmlHttpRequest object
+    var http = new XMLHttpRequest();
+    //open connection. true - asynchronous, false - synchronous
+    http.open("POST", url + key, true);
+
+    //Send the proper header information
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    //Callback when the state changes
+    http.onreadystatechange = function() {
+    	if(http.readyState == 4 && http.status == 200) {
+    		alert(http.responseText);
+    	}
+    }
+    //Send request to the server
+    http.send(params);
+    
     // loadScreen('map');
   });
 
