@@ -9,7 +9,7 @@ var navItems = [
   {"label": "About", "screen": "about", "icon": "info"}
 ];
 
-var joobleEndpoint = 'https://us.jooble.org/api/76f25411-d4bd-4aba-bcb1-687fad2723f8'
+var joobleEndpoint = "https://us.jooble.org/api/76f25411-d4bd-4aba-bcb1-687fad2723f8";
 
 $(document).ready(function() {
   // initialize all components with auto-init attributes
