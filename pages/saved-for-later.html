@@ -20,6 +20,11 @@
 
 <script type="text/javascript">
   db.jobs.each(function(job) {
-    console.log(job);
+    var card = $("#content .template").clone();
+    card.removeClass("template");
+    card.find('.demo-card__title').text(job.position);
+    card.find('.demo-card__subtitle').text(job.company);
+    card.find('.demo-card__secondary').text(job.salary);
+    $("#content").append(card);
   });
 </script>
