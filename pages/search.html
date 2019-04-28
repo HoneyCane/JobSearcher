@@ -1,10 +1,10 @@
 <h3 class="mdc-typography--headline3">Search by Job Title</h3>
-<div class="mdc-text-field">
+<div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
   <input type="text" id="my-text-field" class="mdc-text-field__input">
   <label class="mdc-floating-label" for="my-text-field">Job Title</label>
   <div class="mdc-line-ripple"></div>
 </div>
 
 <script>
-  var textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+  window.mdc.autoInit();
 </script>
