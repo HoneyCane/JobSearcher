@@ -1,6 +1,6 @@
 var navItems = [
   "divider",
-  {"label": "Map", "screen": "map", "icon": "map"},
+  {"label": "List", "screen": "list", "icon": "list"},
   "divider",
   {"label": "Chart", "screen": "chart", "icon": "pie_chart"},
   "divider",
@@ -11,6 +11,7 @@ var navItems = [
 
 var jobTitle;
 var jobLocat;
+var page = 1;
 
 $(document).ready(function() {
   // initialize all components with auto-init attributes
@@ -40,7 +41,9 @@ $(document).ready(function() {
     jobLocat = $('#loc-text-field').get(0).value.toString();
     var url = "https://us.jooble.org/api/";
     var key = "76f25411-d4bd-4aba-bcb1-687fad2723f8";
-    var params = "{ keywords: '" + jobTitle + "', location: '" + jobLocat + "'}";
+    var params = "{ keywords: '" + jobTitle +
+                "', location: '" + jobLocat +
+                "', page: '" + page + "'}";
 
     //create xmlHttpRequest object
     var http = new XMLHttpRequest();
@@ -54,7 +57,6 @@ $(document).ready(function() {
     http.onreadystatechange = function() {
     	if(http.readyState == 4 && http.status == 200) {
         var result = JSON.parse(http.responseText);
-        console.log(result);
         displayJobs(result);
     	}
     }
@@ -67,12 +69,18 @@ $(document).ready(function() {
 /**
  * displayJobs
  * @function
- * @param {array} jobs - JSON of jobs for the cards
+ * @param {array} arr - JSON of jobs for the cards
  */
-function displayJobs(jobs) {
-  $.each(jobs, function(index, value) {
+function displayJobs(arr) {
+  loadScreen('list');
+  $("#content .mdc-typography--headline3").html(arr.totalCount + " Total Results");
+
+  $.each(arr.jobs, function(index, value) {
+
     console.log(index, value);
   });
+
+  window.mdc.autoInit();
 }
 
 
