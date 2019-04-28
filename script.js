@@ -1,13 +1,11 @@
 var navItems = [
   {"label": "About", "screen": "about", "icon": "info"},
-  // {"label": "Resources", "screen": "resources", "icon": "library_books"},
-  // "divider",
-  // {"label": "Data example", "screen": "data", "icon": "list"},
-  // {"label": "Sheet as API", "screen": "sheet-as-api", "icon": "list"}
-
-  // ,
-  // {"label": "Google Sign-in", "screen": "google-sign-in", "icon": "person"}
-
+  "divider",
+  {"label": "Map", "screen": "map", "icon": "map"},
+  "divider",
+  {"label": "Chart", "screen": "chart", "icon": "pie_chart"},
+  "divider",
+  {"label": "Saved for later", "screen": "saved-for-later", "icon": "save"}
 ];
 
 $(document).ready(function() {
