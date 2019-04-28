@@ -76,11 +76,12 @@ function displayJobs(arr) {
     $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
 
     $.each(arr.jobs, function(index, value) {
-      var card = $("#content template").clone();
+      var card = $("#content .template").clone();
       card.removeClass("template");
 
       $("#content").append(card);
 
+      console.log(card);
       console.log(index, value);
     });
   });
