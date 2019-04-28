@@ -9,8 +9,8 @@ var navItems = [
   {"label": "About", "screen": "about", "icon": "info"}
 ];
 
-var jobTitle = '';
-var location = '';
+var jobTitle;
+var location;
 
 $(document).ready(function() {
   // initialize all components with auto-init attributes
@@ -63,16 +63,16 @@ $(document).ready(function() {
 
 });
 
-/**
- * displayJobs
- * @function
- * @param {array} jobs - JSON of jobs for the cards
- */
-function displayJobs(jobs) {
-  $.each(jobs, function(index, value) {
-    console.log(index, value);
-  });
-}
+// /**
+//  * displayJobs
+//  * @function
+//  * @param {array} jobs - JSON of jobs for the cards
+//  */
+// function displayJobs(jobs) {
+//   $.each(jobs, function(index, value) {
+//     console.log(index, value);
+//   });
+// }
 
 
 /**
