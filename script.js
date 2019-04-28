@@ -9,8 +9,6 @@ var navItems = [
   {"label": "About", "screen": "about", "icon": "info"}
 ];
 
-const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
-
 $(document).ready(function() {
   // initialize all components with auto-init attributes
   window.mdc.autoInit();
