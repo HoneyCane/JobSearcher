@@ -37,7 +37,7 @@ $(document).ready(function() {
     var location = $('#loc-text-field').get(0).value.toString();
     var url = "https://us.jooble.org/api/";
     var key = "76f25411-d4bd-4aba-bcb1-687fad2723f8";
-    var params = "{ keywords: " + jobTitle + ", location: " + location + "}";
+    var params = "{ keywords: '" + jobTitle + "', location: '" + location + "'}";
 
     //create xmlHttpRequest object
     var http = new XMLHttpRequest();
@@ -55,7 +55,7 @@ $(document).ready(function() {
     }
     //Send request to the server
     http.send(params);
-    
+
     // loadScreen('map');
   });
 
