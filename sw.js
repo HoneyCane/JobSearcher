@@ -1,7 +1,4 @@
-var version = '1.1';
-
-var cacheName = 'JobSearcher' + version;
-
+var cacheName = 'JobSearcher1.1';
 var appFiles = [
  "./index.html",
  "./script.js",
