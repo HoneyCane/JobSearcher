@@ -73,13 +73,15 @@ function displayJobs(arr) {
   loadScreen('list');
 
   $.each(arr.jobs, function(index, value) {
+    var card = $("#content template").clone();
+    card.removeClass("template");
+
+    $("#content").append(card);
 
     console.log(index, value);
   });
 
-  console.log(arr.totalCount);
-  console.log(arr.totalCount.toString());
-  $("#content .mdc-typography--headline3").text(arr.totalCount.toString() + " Total Results");
+  $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
 
   window.mdc.autoInit();
 }
