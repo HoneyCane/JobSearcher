@@ -78,10 +78,12 @@ function displayJobs(arr) {
     $.each(arr.jobs, function(index, value) {
       var card = $("#content .template").clone();
       card.removeClass("template");
+      card.find('.demo-card__title').text(value.title);
+      card.find('.demo-card__subtitle').text(value.company);
+      card.find('.demo-card__secondary').text(value.source);
 
       $("#content").append(card);
 
-      console.log(card);
       console.log(index, value);
     });
   });
