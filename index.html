@@ -57,15 +57,15 @@
   </div>
 
   <script src="https://unpkg.com/dexie@2.0.4/dist/dexie.js"></script>
-  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
 
   <script>
     // register the service worker for offline use
-    // if('serviceWorker' in navigator) {
-    //   navigator.serviceWorker.register('sw.js').then(function() {
-    //     console.log("Service Worker Registered");
-    //   });
-    // }
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function() {
+        console.log("Service Worker Registered");
+      });
+    }
 
     // Define the database
     var db = new Dexie("job_database");
