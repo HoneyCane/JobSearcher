@@ -71,12 +71,13 @@ $(document).ready(function() {
  */
 function displayJobs(arr) {
   loadScreen('list');
-  $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
 
   $.each(arr.jobs, function(index, value) {
 
     console.log(index, value);
   });
+
+  $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
 
   window.mdc.autoInit();
 }
