@@ -35,10 +35,14 @@ $(document).ready(function() {
 
   // close the drawer and load the selected screen
   $("body").on('click', "#content .mdc-button", function (event){
-    var query = $('#my-text-field').get(0).value;
-    $.post(joobleEndpoint, {"keywords": query}, function(result) {
+    var jobTitle = $('#job-text-field').get(0).value.toString();
+    var location = $('#loc-text-field').get(0).value.toString();
+    $.post(joobleEndpoint,
+        { "keywords": jobTitle,
+          "location": location
+        }, function(result) {
       console.log(result);
-    })
+    });
     // loadScreen('map');
   });
 
