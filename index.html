@@ -66,12 +66,6 @@
         console.log("Service Worker Registered");
       });
     }
-
-    // Define the database
-    var db = new Dexie("job_database");
-    db.version(1).stores({
-      jobs: '++id, position, company'
-    });
   </script>
 
 </body>

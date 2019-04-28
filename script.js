@@ -9,6 +9,7 @@ var navItems = [
 
 var jobTitle;
 var jobLocat;
+var db;
 var page = 1;
 
 $(document).ready(function() {
@@ -18,6 +19,12 @@ $(document).ready(function() {
   loadDrawerNavigationElements(navItems);
 
   loadScreen("search");
+
+  // Define the database
+  db = new Dexie("job_database");
+  db.version(1).stores({
+    jobs: '++id, position, company'
+  });
 
   // a constant that references MDCDrawer object
   const drawer = $("aside")[0].MDCDrawer;
@@ -80,13 +87,20 @@ function displayJobs(arr) {
       card.removeClass("template");
       card.find('.demo-card__title').text(value.title);
       card.find('.demo-card__subtitle').text(value.company);
-      card.find('.demo-card__secondary').text(value.source);
+      card.find('.demo-card__secondary').text('Salary (if any): 'value.salary);
 
       $("#content").append(card);
+    });
 
-      console.log(index, value);
+    $("body").on('click', "#content .mdc-icon-button", function (event){
+      db.jobs.put({
+        position: "",
+        company: ""
+      });
     });
   });
+
+
 }
 
 
