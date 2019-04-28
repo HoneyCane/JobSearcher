@@ -70,22 +70,20 @@ $(document).ready(function() {
  * @param {array} arr - JSON of jobs for the cards
  */
 function displayJobs(arr) {
-  loadScreen('list').then(function() {
-    console.log('done loading');
+  $("#content").load("./pages/list.html", function () {
+    console.log("------ Screen load: " + screenName);
+
+    $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
+
+    $.each(arr.jobs, function(index, value) {
+      var card = $("#content template").clone();
+      card.removeClass("template");
+
+      $("#content").append(card);
+
+      console.log(index, value);
+    });
   });
-
-  $.each(arr.jobs, function(index, value) {
-    var card = $("#content template").clone();
-    card.removeClass("template");
-
-    $("#content").append(card);
-
-    console.log(index, value);
-  });
-
-  $("#content .mdc-typography--headline3").text(arr.totalCount + " Total Results");
-
-  window.mdc.autoInit();
 }
 
 
@@ -125,6 +123,5 @@ function loadDrawerNavigationElements(navItems) {
 function loadScreen(screenName) {
   $("#content").load("./pages/" + screenName + ".html", function () {
     console.log("------ Screen load: " + screenName);
-});
-
+  });
 }
