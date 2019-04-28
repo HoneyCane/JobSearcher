@@ -9,7 +9,8 @@ var navItems = [
   {"label": "About", "screen": "about", "icon": "info"}
 ];
 
-var jobTitle = '', location = '';
+var jobTitle = '';
+var location = '';
 
 $(document).ready(function() {
   // initialize all components with auto-init attributes
