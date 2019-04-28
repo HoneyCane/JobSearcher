@@ -77,6 +77,8 @@ function displayJobs(arr) {
     console.log(index, value);
   });
 
+  console.log(arr.totalCount);
+  console.log(arr.totalCount.toString());
   $("#content .mdc-typography--headline3").text(arr.totalCount.toString() + " Total Results");
 
   window.mdc.autoInit();
