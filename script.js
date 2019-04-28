@@ -93,6 +93,12 @@ function displayJobs(arr) {
     });
 
     $("body").on('click', "#content .mdc-icon-button", function (event){
+      var me = $('this');
+      console.log(me);
+      console.log(me.parent());
+      console.log(me.parent().parent());
+      console.log(me.parent().parent().find('.demo-card__title'));
+      console.log(me.parent().parent().find('.demo-card__title').text());
       db.jobs.put({
         position: "",
         company: ""
