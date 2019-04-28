@@ -70,7 +70,9 @@ $(document).ready(function() {
  * @param {array} arr - JSON of jobs for the cards
  */
 function displayJobs(arr) {
-  loadScreen('list');
+  loadScreen('list').then(function() {
+    console.log('done loading');
+  });
 
   $.each(arr.jobs, function(index, value) {
     var card = $("#content template").clone();
