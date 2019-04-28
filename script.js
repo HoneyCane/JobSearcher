@@ -87,7 +87,7 @@ function displayJobs(arr) {
       card.removeClass("template");
       card.find('.demo-card__title').text(value.title);
       card.find('.demo-card__subtitle').text(value.company);
-      card.find('.demo-card__secondary').text('Salary (if any): 'value.salary);
+      card.find('.demo-card__secondary').text('Salary (if any): ' + value.salary);
 
       $("#content").append(card);
     });
